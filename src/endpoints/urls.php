@@ -1,5 +1,7 @@
 <?php
 
+namespace assignment\endpoints;
+
 use assignment\data\Url;
 use Klein\Request;
 use Klein\Response;

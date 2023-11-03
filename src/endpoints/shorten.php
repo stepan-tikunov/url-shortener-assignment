@@ -8,6 +8,10 @@ use Klein\Request;
 use Klein\Response;
 
 return function (Request $request, Response $response): void {
+    if ($response->isSent() || $response->isLocked()) {
+        return;
+    }
+
     $url = $request->param("url");
     $url = filter_var($url, FILTER_SANITIZE_URL);
 
@@ -16,7 +20,7 @@ return function (Request $request, Response $response): void {
     if (!filter_var($url, FILTER_VALIDATE_URL)) {
         $body = json_encode([
             "success" => false,
-            "error" => "bad_url",
+            "error" => "Bad URL format",
         ]);
 
         $response->code(400);   // Bad request

@@ -21,7 +21,7 @@ class AlphanumericEncoder
     }
 
     private static function decodeChar(string $char): int {
-        return ord($char) - ord(self::ALPHABET[0]);
+        return strpos(self::ALPHABET, $char);
     }
 
     public static function decode(string $alphanumeric): string {

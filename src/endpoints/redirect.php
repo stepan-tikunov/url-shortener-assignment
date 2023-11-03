@@ -1,5 +1,7 @@
 <?php
 
+namespace assignment\endpoints;
+
 use assignment\data\Url;
 use assignment\data\UrlClick;
 use assignment\encode\FormatPreservingEncoder;
@@ -26,6 +28,7 @@ return function (Request $request, Response $response): void {
 
     $encoder = new FormatPreservingEncoder();
     $id = $encoder->decode($shortUrl);
+
     $url = Url::get($id);
 
     if ($url === null) {
@@ -33,8 +36,11 @@ return function (Request $request, Response $response): void {
         return;
     }
 
-    $now = new DateTime();
-    $ip = $request->server()->get("REMOTE_ADDR");
+    $now = new \DateTime();
+
+    $ip = $request->server()->get("HTTP_X_REAL_IP");
+    $ip ??= $request->server()->get("REMOTE_ADDR");
+
     $click = new UrlClick($now, $ip, $url);
 
     $click->save();

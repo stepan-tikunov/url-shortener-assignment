@@ -1,5 +1,7 @@
 <?php
 
+namespace assignment\endpoints;
+
 use assignment\data\Url;
 use assignment\data\UrlClick;
 use assignment\encode\FormatPreservingEncoder;
@@ -7,11 +9,11 @@ use Klein\Request;
 use Klein\Response;
 
 return function (Request $request, Response $response): void {
-    $response->header("Content-Type", "application/json");
-
     if ($response->isSent() || $response->isLocked()) {
         return;
     }
+
+    $response->header("Content-Type", "application/json");
 
     $shortUrl = $request->param("url");
 

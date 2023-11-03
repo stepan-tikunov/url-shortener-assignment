@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Simple PHP-based URL shortener" />
+
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/urls.css" />
+
+    <title>URL Shortener</title>
+</head>
+
+<body>
+    <main>
+        <header>
+            <div><a href="/">Main</a></div>
+            <div><a href="/urls">URLs List</a></div>
+        </header>
+
+        <article>
+            <h1>Link Details</h1>
+
+            <div class="summary"></div>
+
+            <h2>All clicks</h2>
+
+            <div class="table-wrapper">
+                Loading...
+            </div>
+        </article>
+
+        <footer>
+            <div>Stepan Tikunov, 2023</div>
+            <div>
+                <a href="https://github.com/stepan-tikunov/url-shortener-assignment" target="_blank">
+                    GitHub
+                </a>
+            </div>
+        </footer>
+    </main>
+
+    <div class="popup">
+        <span class="popup-text"></span>
+    </div>
+
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script type="text/javascript" src="/assets/js/url-details.js"></script>
+</body>
+
+</html>

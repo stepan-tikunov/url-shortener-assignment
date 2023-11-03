@@ -1,0 +1,58 @@
+@media (min-width: 640px) {
+    html {
+        font-size: 14px;
+    }
+    article {
+        width: 600px;
+    }
+}
+@media (min-width: 960px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.url-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.url {
+    display: block;
+    width: calc(100% - 64px);
+
+    background-color: #ddd;
+
+    font-size: 1.5em;
+    line-height: 60px;
+
+    padding: 0 30px;
+
+    border: 2px solid transparent;
+    border-radius: 32px;
+
+    text-align: center;
+
+    transition: all 200ms linear;
+    outline: none;
+}
+
+.url:focus {
+    background-color: #e4e4e4;
+    border-color: black;
+}
+
+.short-url {
+    margin-top: 20px;
+
+    font-size: 1.15em;
+
+    opacity: 0;
+    transition: opacity 300ms linear;
+}
+
+.short-url.show {
+    opacity: 1;
+}
