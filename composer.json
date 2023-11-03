@@ -1,0 +1,13 @@
+{
+  "require": {
+    "katoni/php-ffx": "v1.0",
+    "ext-sqlite3": "*",
+    "klein/klein": "^2.1",
+    "geoip2/geoip2": "^2.13"
+  },
+  "autoload": {
+    "psr-4": {
+      "assignment\\": "src/"
+    }
+  }
+}

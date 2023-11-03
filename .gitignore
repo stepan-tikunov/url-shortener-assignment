@@ -1,0 +1,5 @@
+.idea/
+vendor/
+*.mmdb
+*.sqlite
+app.ini

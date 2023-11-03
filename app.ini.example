@@ -1,0 +1,8 @@
+[database]
+url_db_file = database/urls.sqlite
+geo_db_file = database/cities.mmdb
+
+
+[application]
+ffx_key =
+url_length = 7
